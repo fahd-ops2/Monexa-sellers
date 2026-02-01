@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 
 // ——— Mock data ———
 const MOCK = {
-  businessName: 'Boutique Sara',
+  businessName: 'Boutique Pelluche',
   today: {
     orders: 12,
     revenue: 4850,

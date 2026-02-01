@@ -1,0 +1,47 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+pnpm-error.log*
+
+# Dependency directories
+node_modules/
+/jspm_packages/
+
+# Caches
+.vite/
+.parcel-cache/
+.next/
+.nuxt/
+.svelte-kit/
+
+# Production build files
+/dist/
+/build/
+/out/
+
+# Temporary files
+*.tmp
+*.bak
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+
+# macOS specific
+.DS_Store
+
+# npm specific
+*.tgz
+
+# Editor config
+.editorconfig
