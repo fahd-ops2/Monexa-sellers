@@ -7,7 +7,7 @@ const CURRENCIES = [
 ]
 
 function Settings() {
-  const [businessName, setBusinessName] = useState('Boutique Sara')
+  const [businessName, setBusinessName] = useState('Boutique Pelluche')
   const [currencyId, setCurrencyId] = useState('MAD')
 
   const handleSubmit = (e) => {
