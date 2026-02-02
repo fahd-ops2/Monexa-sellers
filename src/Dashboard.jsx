@@ -40,25 +40,25 @@ function Dashboard() {
 
   return (
     <div className="px-4 pt-5 space-y-6 md:px-6 md:pt-6 md:space-y-8 lg:px-8 lg:pt-8">
-      <p className="text-lg font-medium text-slate-900 dark:text-slate-100 md:text-xl">
+      <p className="text-lg font-medium text-gray-900 dark:text-slate-100 md:text-xl">
         Bonjour, {MOCK.businessName} 👋
       </p>
         {/* 2. Today Summary — 3 cards */}
         <section>
           <h2 className="sr-only">Résumé du jour</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 lg:gap-8">
-            <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 md:p-5 shadow-sm dark:shadow-none transition-colors">
-              <p className="text-2xl font-bold text-slate-900 dark:text-slate-100 tabular-nums">
+            <div className="bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 p-4 md:p-5 shadow-sm dark:shadow-none transition-colors">
+              <p className="text-2xl font-bold text-gray-900 dark:text-slate-100 tabular-nums">
                 {MOCK.today.orders}
               </p>
-              <p className="text-slate-500 dark:text-slate-400 text-sm mt-0.5">Commandes</p>
+              <p className="text-gray-500 dark:text-slate-400 text-sm mt-0.5">Commandes</p>
             </div>
-            <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 md:p-5 shadow-sm dark:shadow-none transition-colors">
-              <p className="text-2xl font-bold text-slate-900 dark:text-slate-100 tabular-nums">
+            <div className="bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 p-4 md:p-5 shadow-sm dark:shadow-none transition-colors">
+              <p className="text-2xl font-bold text-gray-900 dark:text-slate-100 tabular-nums">
                 {MOCK.today.revenue.toLocaleString('fr-MA')}
-                <span className="text-base font-medium text-slate-500 dark:text-slate-400"> MAD</span>
+                <span className="text-base font-medium text-gray-500 dark:text-slate-400"> MAD</span>
               </p>
-              <p className="text-slate-500 dark:text-slate-400 text-sm mt-0.5">Chiffre d’affaires</p>
+              <p className="text-gray-500 dark:text-slate-400 text-sm mt-0.5">Chiffre d’affaires</p>
             </div>
             <div
               className={`rounded-xl border p-4 md:p-5 shadow-sm dark:shadow-none transition-colors ${
@@ -81,7 +81,7 @@ function Dashboard() {
                 {MOCK.today.profit.toLocaleString('fr-MA')}
                 <span className="text-base font-medium opacity-90"> MAD</span>
               </p>
-              <p className="text-slate-600 dark:text-slate-400 text-sm mt-0.5">Bénéfice</p>
+              <p className="text-gray-600 dark:text-slate-400 text-sm mt-0.5">Bénéfice</p>
             </div>
           </div>
         </section>
@@ -121,25 +121,25 @@ function Dashboard() {
 
           {/* Actions — right on desktop */}
           <section>
-            <h2 className="text-slate-700 dark:text-slate-300 font-medium text-sm mb-3 md:text-base">
+            <h2 className="text-gray-700 dark:text-gray-300 font-medium text-sm mb-3 md:text-base">
               À faire maintenant
             </h2>
             <div className="space-y-3 md:space-y-4">
-              <button
-                type="button"
-                className="w-full py-4 px-4 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-medium rounded-xl active:bg-slate-800 dark:active:bg-slate-200 touch-manipulation text-base transition-colors"
+          <button
+            type="button"
+            className="w-full py-4 px-4 bg-blueGreeny dark:bg-slate-100 text-white dark:text-gray-900 font-medium rounded-xl active:bg-[#4aabaf] dark:active:bg-slate-200 touch-manipulation text-base transition-colors"
               >
                 Confirmer les commandes
               </button>
               <button
                 type="button"
-                className="w-full py-4 px-4 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-600 text-slate-800 dark:text-slate-200 font-medium rounded-xl active:bg-slate-50 dark:active:bg-slate-700 touch-manipulation text-base transition-colors"
+                className="w-full py-4 px-4 bg-white dark:bg-slate-800 border-2 border-gray-200 dark:border-slate-600 text-gray-800 dark:text-slate-200 font-medium rounded-xl active:bg-neutral-100 dark:active:bg-slate-700 touch-manipulation text-base transition-colors"
               >
                 Marquer comme livrée
               </button>
               <button
                 type="button"
-                className="w-full py-4 px-4 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-600 text-slate-800 dark:text-slate-200 font-medium rounded-xl active:bg-slate-50 dark:active:bg-slate-700 touch-manipulation text-base transition-colors"
+                className="w-full py-4 px-4 bg-white dark:bg-slate-800 border-2 border-gray-200 dark:border-slate-600 text-gray-800 dark:text-slate-200 font-medium rounded-xl active:bg-neutral-100 dark:active:bg-slate-700 touch-manipulation text-base transition-colors"
               >
                 Ajouter une dépense
               </button>
@@ -148,25 +148,25 @@ function Dashboard() {
         </div>
 
         {/* 5. Cash Snapshot */}
-        <section className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 md:p-5 lg:p-6 shadow-sm dark:shadow-none transition-colors">
-          <h2 className="text-slate-700 dark:text-slate-300 font-medium text-sm mb-3">
+        <section className="bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 p-4 md:p-5 lg:p-6 shadow-sm dark:shadow-none transition-colors">
+          <h2 className="text-gray-700 dark:text-gray-300 font-medium text-sm mb-3">
             Trésorerie
           </h2>
           <div className="space-y-2">
             <div className="flex justify-between text-sm">
-              <span className="text-slate-500 dark:text-slate-400">Disponible</span>
-              <span className="font-semibold tabular-nums text-slate-900 dark:text-slate-100">
+              <span className="text-gray-500 dark:text-slate-400">Disponible</span>
+              <span className="font-semibold tabular-nums text-gray-900 dark:text-slate-100">
                 {MOCK.cash.available.toLocaleString('fr-MA')} MAD
               </span>
             </div>
             <div className="flex justify-between text-sm">
-              <span className="text-slate-500 dark:text-slate-400">Attendu (aujourd’hui)</span>
-              <span className="font-semibold tabular-nums text-slate-900 dark:text-slate-100">
+              <span className="text-gray-500 dark:text-slate-400">Attendu (aujourd’hui)</span>
+              <span className="font-semibold tabular-nums text-gray-900 dark:text-slate-100">
                 {MOCK.cash.expected.toLocaleString('fr-MA')} MAD
               </span>
             </div>
           </div>
-          <div className="mt-3 pt-3 border-t border-slate-100 dark:border-slate-600">
+          <div className="mt-3 pt-3 border-t border-gray-100 dark:border-slate-600">
             <span
               className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium border ${cashStatusStyles[MOCK.cash.status]}`}
             >

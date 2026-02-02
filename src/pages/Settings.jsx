@@ -21,7 +21,7 @@ function Settings() {
         {/* Two-column form on desktop, stacked on mobile — labels on top */}
         <div className="grid grid-cols-1 md:grid-cols-2 md:gap-5 lg:gap-6">
           <div>
-            <label htmlFor="settings-business" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+            <label htmlFor="settings-business" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
               Nom du commerce
             </label>
             <input
@@ -29,19 +29,19 @@ function Settings() {
               type="text"
               value={businessName}
               onChange={(e) => setBusinessName(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-400 dark:focus:ring-slate-500 transition-colors"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-gray-400 dark:focus:ring-slate-500 transition-colors"
               placeholder="Mon commerce"
             />
           </div>
           <div>
-            <label htmlFor="settings-currency" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+            <label htmlFor="settings-currency" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
               Devise
             </label>
             <select
               id="settings-currency"
               value={currencyId}
               onChange={(e) => setCurrencyId(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-400 dark:focus:ring-slate-500 transition-colors"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-gray-400 dark:focus:ring-slate-500 transition-colors"
             >
               {CURRENCIES.map((c) => (
                 <option key={c.id} value={c.id}>
@@ -56,7 +56,7 @@ function Settings() {
         <div className="pt-2 md:flex md:justify-end">
           <button
             type="submit"
-            className="w-full md:w-auto md:min-w-[10rem] py-3 px-5 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-medium rounded-xl active:bg-slate-800 dark:active:bg-slate-200 touch-manipulation transition-colors"
+            className="w-full md:w-auto md:min-w-[10rem] py-3 px-5 bg-blueGreeny dark:bg-slate-100 text-white dark:text-gray-900 font-medium rounded-xl active:bg-[#4aabaf] dark:active:bg-slate-200 touch-manipulation transition-colors"
           >
             Enregistrer
           </button>

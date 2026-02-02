@@ -24,7 +24,7 @@ function ProductCard({ product, onUpdateStatus, onDelete }) {
   const statusStyles = {
     active: 'bg-emerald-100 dark:bg-emerald-900/40 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-700',
     disabled: 'bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300 border-amber-200 dark:border-amber-700',
-    archived: 'bg-slate-100 dark:bg-slate-700/40 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-700',
+    archived: 'bg-neutral-100 dark:bg-slate-700/40 text-gray-600 dark:text-slate-400 border-gray-200 dark:border-slate-700',
   }
 
   // Visual rules for cards based on status
@@ -36,11 +36,11 @@ function ProductCard({ product, onUpdateStatus, onDelete }) {
 
   return (
     <article
-      className={`bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 md:p-5 shadow-sm dark:shadow-none transition-all ${cardVisuals[product.status]}`}
+      className={`bg-pinky dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 p-4 md:p-5 shadow-sm dark:shadow-none transition-all ${cardVisuals[product.status]}`}
     >
       <div className="flex justify-between items-start gap-2">
         <div className="min-w-0 flex-1">
-          <p className="font-medium text-slate-900 dark:text-slate-100 truncate">{product.name}</p>
+          <p className="font-medium text-gray-900 dark:text-slate-100 truncate">{product.name}</p>
           {/* Status badge */}
           <span
             className={`inline-flex items-center mt-1 px-2.5 py-0.5 rounded-full text-xs font-medium ${statusStyles[product.status]}`}
@@ -49,10 +49,10 @@ function ProductCard({ product, onUpdateStatus, onDelete }) {
           </span>
         </div>
         <div className="text-right flex-shrink-0">
-          <p className="font-semibold text-slate-900 dark:text-slate-100 tabular-nums">
+          <p className="font-semibold text-gray-900 dark:text-slate-100 tabular-nums">
             {product.price.toLocaleString('fr-MA')} MAD
           </p>
-          <p className="text-sm text-slate-500 dark:text-slate-400 mt-0.5">
+          <p className="text-sm text-gray-500 dark:text-slate-400 mt-0.5">
             Profit: {averageProfit.toLocaleString('fr-MA')} MAD
           </p>
         </div>
@@ -60,7 +60,7 @@ function ProductCard({ product, onUpdateStatus, onDelete }) {
 
       {/* Product Actions */}
       {product.status !== 'archived' && ( // No actions for archived products
-        <div className="mt-4 pt-3 border-t border-slate-100 dark:border-slate-600 flex flex-col gap-2 md:flex-row md:justify-end md:gap-3">
+        <div className="mt-4 pt-3 border-t border-gray-100 dark:border-slate-600 flex flex-col gap-2 md:flex-row md:justify-end md:gap-3">
           {product.status === 'active' && (
             <>
               <button
@@ -157,10 +157,10 @@ function Products() {
     <div className="px-4 pt-5 pb-6 space-y-6 md:px-6 md:pt-6 md:pb-8 lg:px-8 lg:pt-8 max-w-4xl mx-auto">
       {/* 1. Page Header */}
       <header className="mb-4 md:mb-6">
-        <h1 className="text-xl md:text-2xl font-semibold text-slate-900 dark:text-slate-100">
+        <h1 className="text-xl md:text-2xl font-semibold text-gray-900 dark:text-slate-100">
           Produits
         </h1>
-        <p className="text-slate-500 dark:text-slate-400 text-sm md:text-base mt-1">
+        <p className="text-gray-500 dark:text-slate-400 text-sm md:text-base mt-1">
           Gérez les produits que vous vendez
         </p>
       </header>
@@ -170,16 +170,16 @@ function Products() {
         <button
           type="button"
           onClick={() => setShowAddProductForm(prev => !prev)}
-          className="w-full py-3 px-5 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-medium rounded-xl active:bg-slate-800 dark:active:bg-slate-200 transition-colors text-base"
+          className="w-full py-3 px-5 bg-blueGreeny dark:bg-neutral-100 text-white dark:text-gray-900 font-medium rounded-xl active:bg-[#4aabaf] dark:active:bg-teenyGreeny transition-colors text-base"
         >
           {showAddProductForm ? 'Annuler' : '+ Ajouter un produit'}
         </button>
 
         {/* Add Product Form (inline) */}
         {showAddProductForm && (
-          <form onSubmit={handleAddProduct} className="mt-4 p-4 md:p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm dark:shadow-none space-y-4">
+          <form onSubmit={handleAddProduct} className="mt-4 p-4 md:p-5 bg-pinky dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 shadow-sm dark:shadow-none space-y-4">
             <div>
-              <label htmlFor="product-name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+              <label htmlFor="product-name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
                 Nom du produit
               </label>
               <input
@@ -187,14 +187,14 @@ function Products() {
                 type="text"
                 value={newProduct.name}
                 onChange={(e) => setNewProduct(prev => ({ ...prev, name: e.target.value }))}
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-400 dark:focus:ring-slate-500 transition-colors"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-slate-600 bg-pinky dark:bg-slate-700 text-gray-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400 dark:focus:ring-slate-500 transition-colors"
                 placeholder="Ex: Robe de soirée"
                 required
               />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4 lg:gap-5">
               <div>
-                <label htmlFor="product-price" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+                <label htmlFor="product-price" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
                   Prix de vente (MAD)
                 </label>
                 <input
@@ -203,13 +203,13 @@ function Products() {
                   inputMode="decimal"
                   value={newProduct.price}
                   onChange={(e) => setNewProduct(prev => ({ ...prev, price: e.target.value }))}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-400 dark:focus:ring-slate-500 transition-colors"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-slate-600 bg-pinky dark:bg-slate-700 text-gray-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400 dark:focus:ring-slate-500 transition-colors"
                   placeholder="Ex: 250"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="product-delivery-cost" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+                <label htmlFor="product-delivery-cost" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
                   Coût de livraison (MAD)
                 </label>
                 <input
@@ -218,7 +218,7 @@ function Products() {
                   inputMode="decimal"
                   value={newProduct.deliveryCost}
                   onChange={(e) => setNewProduct(prev => ({ ...prev, deliveryCost: e.target.value }))}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-400 dark:focus:ring-slate-500 transition-colors"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-slate-600 bg-pinky dark:bg-slate-700 text-gray-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400 dark:focus:ring-slate-500 transition-colors"
                   placeholder="Ex: 30"
                   required
                 />
@@ -238,7 +238,7 @@ function Products() {
 
 
       {/* 3. Product Status Tabs */}
-      <div className="flex gap-1 md:gap-3 md:p-2 bg-slate-200 dark:bg-slate-700 rounded-xl mb-4 md:mb-6 overflow-x-auto transition-colors">
+      <div className="flex gap-1 md:gap-3 md:p-2 bg-teenyGreeny dark:bg-slate-700 rounded-xl mb-4 md:mb-6 overflow-x-auto transition-colors">
         {STATUS_TABS.map((tab) => (
           <button
             key={tab.id}
@@ -246,8 +246,8 @@ function Products() {
             onClick={() => setActiveTab(tab.id)}
             className={`flex-shrink-0 px-4 py-2.5 md:px-5 md:py-3 rounded-lg text-sm font-medium touch-manipulation transition-colors ${
               activeTab === tab.id
-                ? 'bg-white dark:bg-slate-600 text-slate-900 dark:text-slate-100 shadow-sm'
-                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
+                ? 'bg-pinky dark:bg-slate-600 text-gray-900 dark:text-slate-100 shadow-sm'
+                : 'text-gray-600 dark:text-slate-400 hover:text-gray-900 dark:hover:text-slate-200'
             }`}
           >
             {tab.label}
@@ -258,7 +258,7 @@ function Products() {
       {/* 4. Product List (Card-based) */}
       <div className="space-y-3 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-4 lg:gap-5 md:space-y-0">
         {filteredProducts.length === 0 ? (
-          <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8 text-center text-slate-500 dark:text-slate-400 text-sm transition-colors md:col-span-2 lg:col-span-3">
+          <div className="bg-pinky dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 p-8 text-center text-gray-500 dark:text-slate-400 text-sm transition-colors md:col-span-2 lg:col-span-3">
             {activeTab === 'active' && (
               'Aucun produit actif. Ajoutez un produit pour commencer.'
             )}

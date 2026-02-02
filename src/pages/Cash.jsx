@@ -54,32 +54,32 @@ function Cash() {
       {/* 1. Cash Summary + 2. Add Expense: side by side on md+ */}
       <div className="md:grid md:grid-cols-2 md:gap-6 md:items-start">
       {/* 1. Cash Summary */}
-      <section className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 shadow-sm dark:shadow-none transition-colors md:p-5">
-        <h2 className="text-slate-700 dark:text-slate-300 font-medium text-sm mb-3">
+      <section className="bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 p-4 shadow-sm dark:shadow-none transition-colors md:p-5">
+        <h2 className="text-gray-700 dark:text-gray-300 font-medium text-sm mb-3">
           Où est mon argent ?
         </h2>
         <div className="space-y-2">
           <div className="flex justify-between text-sm">
-            <span className="text-slate-500 dark:text-slate-400">Disponible</span>
-            <span className="font-semibold tabular-nums text-slate-900 dark:text-slate-100">
+            <span className="text-gray-500 dark:text-slate-400">Disponible</span>
+            <span className="font-semibold tabular-nums text-gray-900 dark:text-slate-100">
               {disponible.toLocaleString('fr-MA')} MAD
             </span>
           </div>
           <div className="flex justify-between text-sm">
-            <span className="text-slate-500 dark:text-slate-400">Attendu</span>
-            <span className="font-semibold tabular-nums text-slate-900 dark:text-slate-100">
+            <span className="text-gray-500 dark:text-slate-400">Attendu</span>
+            <span className="font-semibold tabular-nums text-gray-900 dark:text-slate-100">
               {attendu.toLocaleString('fr-MA')} MAD
             </span>
           </div>
-          <div className="flex justify-between text-sm pt-2 border-t border-slate-100 dark:border-slate-600">
-            <span className="text-slate-500 dark:text-slate-400">Écart</span>
+          <div className="flex justify-between text-sm pt-2 border-t border-gray-100 dark:border-slate-600">
+            <span className="text-gray-500 dark:text-slate-400">Écart</span>
             <span
               className={`font-medium tabular-nums ${
                 difference > 0
                   ? 'text-amber-600 dark:text-amber-400'
                   : difference < 0
                     ? 'text-emerald-600 dark:text-emerald-400'
-                    : 'text-slate-600 dark:text-slate-400'
+                    : 'text-gray-600 dark:text-slate-400'
               }`}
             >
               {difference > 0 ? '+' : ''}
@@ -102,8 +102,8 @@ function Cash() {
       </section>
 
       {/* 2. Add Expense */}
-      <section className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 shadow-sm dark:shadow-none transition-colors md:p-5 mt-6 md:mt-0">
-        <h2 className="text-slate-700 dark:text-slate-300 font-medium text-sm mb-3">
+      <section className="bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 p-4 shadow-sm dark:shadow-none transition-colors md:p-5 mt-6 md:mt-0">
+        <h2 className="text-gray-700 dark:text-gray-300 font-medium text-sm mb-3">
           Ajouter une dépense
         </h2>
         <form onSubmit={handleAddExpense} className="space-y-3">
@@ -118,7 +118,7 @@ function Cash() {
               placeholder="Montant (MAD)"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-400 dark:focus:ring-slate-500 touch-manipulation transition-colors"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400 dark:focus:ring-slate-500 touch-manipulation transition-colors"
             />
           </div>
           <div>
@@ -129,7 +129,7 @@ function Cash() {
               id="expense-category"
               value={categoryId}
               onChange={(e) => setCategoryId(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-400 dark:focus:ring-slate-500 touch-manipulation transition-colors"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-gray-400 dark:focus:ring-slate-500 touch-manipulation transition-colors"
             >
               {CATEGORIES.map((cat) => (
                 <option key={cat.id} value={cat.id}>
@@ -140,7 +140,7 @@ function Cash() {
           </div>
           <button
             type="submit"
-            className="w-full py-4 px-4 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-medium rounded-xl active:bg-slate-800 dark:active:bg-slate-200 touch-manipulation text-base transition-colors"
+            className="w-full py-4 px-4 bg-blueGreeny dark:bg-slate-100 text-white dark:text-gray-900 font-medium rounded-xl active:bg-[#4aabaf] dark:active:bg-gray-200 touch-manipulation text-base transition-colors"
           >
             Enregistrer
           </button>
@@ -150,12 +150,12 @@ function Cash() {
 
       {/* 3. Expenses List */}
       <section>
-        <h2 className="text-slate-700 dark:text-slate-300 font-medium text-sm mb-3">
+        <h2 className="text-gray-700 dark:text-gray-300 font-medium text-sm mb-3">
           Dépenses récentes
         </h2>
-        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm dark:shadow-none overflow-hidden transition-colors">
+        <div className="bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 shadow-sm dark:shadow-none overflow-hidden transition-colors">
           {expenses.length === 0 ? (
-            <p className="px-4 py-6 text-center text-slate-500 dark:text-slate-400 text-sm">
+            <p className="px-4 py-6 text-center text-gray-500 dark:text-slate-400 text-sm">
               Aucune dépense pour l’instant.
             </p>
           ) : (
@@ -165,10 +165,10 @@ function Cash() {
                   key={exp.id}
                   className="flex justify-between items-center px-4 py-3"
                 >
-                  <span className="text-slate-700 dark:text-slate-300 font-medium">
+                  <span className="text-gray-700 dark:text-gray-300 font-medium">
                     {getCategoryLabel(exp.categoryId)}
                   </span>
-                  <span className="font-semibold tabular-nums text-slate-900 dark:text-slate-100">
+                  <span className="font-semibold tabular-nums text-gray-900 dark:text-slate-100">
                     −{exp.amount.toLocaleString('fr-MA')} MAD
                   </span>
                 </li>

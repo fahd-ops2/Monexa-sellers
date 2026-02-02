@@ -6,7 +6,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        pinky: '#fbe3e8',
+        blueGreeny: '#5cbdb9',
+        teenyGreeny: '#ebf6f5',
+      },
+    },
   },
   plugins: [],
 }

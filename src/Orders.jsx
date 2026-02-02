@@ -24,7 +24,7 @@ function Orders() {
   return (
     <div className="px-4 pt-4 md:px-6 md:pt-6 lg:px-8 lg:pt-8">
         {/* Status tabs — horizontal, more spacing on desktop */}
-        <div className="flex gap-1 md:gap-3 md:p-2 bg-slate-200 dark:bg-slate-700 rounded-xl mb-4 md:mb-6 overflow-x-auto transition-colors">
+        <div className="flex gap-1 md:gap-3 md:p-2 bg-gray-200 dark:bg-gray-700 rounded-xl mb-4 md:mb-6 overflow-x-auto transition-colors">
           {STATUSES.map((status) => (
             <button
               key={status}
@@ -32,8 +32,8 @@ function Orders() {
               onClick={() => setActiveTab(status)}
               className={`flex-shrink-0 px-4 py-2.5 md:px-5 md:py-3 rounded-lg text-sm font-medium touch-manipulation transition-colors ${
                 activeTab === status
-                  ? 'bg-white dark:bg-slate-600 text-slate-900 dark:text-slate-100 shadow-sm'
-                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
+                  ? 'bg-pinky dark:bg-slate-600 text-gray-900 dark:text-slate-100 shadow-sm'
+                  : 'text-gray-600 dark:text-slate-400 hover:text-gray-900 dark:hover:text-slate-200'
               }`}
             >
               {status}
@@ -44,7 +44,7 @@ function Orders() {
         {/* Orders list — stacked on mobile, 2-column grid on desktop */}
         <div className="space-y-3 md:grid md:grid-cols-2 md:gap-4 lg:gap-5 md:space-y-0">
           {filteredOrders.length === 0 ? (
-            <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8 text-center text-slate-500 dark:text-slate-400 text-sm transition-colors md:col-span-2">
+            <div className="bg-pinky dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 p-8 text-center text-gray-500 dark:text-slate-400 text-sm transition-colors md:col-span-2">
               Aucune commande {activeTab.toLowerCase()}
             </div>
           ) : (
@@ -61,17 +61,17 @@ function OrderCard({ order }) {
   const isProfitable = order.profit >= 0
 
   return (
-    <article className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 md:p-5 shadow-sm dark:shadow-none transition-colors">
+    <article className="bg-pinky dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 p-4 md:p-5 shadow-sm dark:shadow-none transition-colors">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between md:gap-4">
         {/* Content — full width on mobile, left on desktop */}
         <div className="min-w-0 flex-1">
           <div className="flex justify-between items-start gap-2">
             <div className="min-w-0 flex-1">
-              <p className="font-medium text-slate-900 dark:text-slate-100 truncate">{order.client}</p>
-              <p className="text-slate-500 dark:text-slate-400 text-sm truncate">{order.product}</p>
+              <p className="font-medium text-gray-900 dark:text-slate-100 truncate">{order.client}</p>
+              <p className="text-gray-500 dark:text-slate-400 text-sm truncate">{order.product}</p>
             </div>
             <div className="text-right flex-shrink-0">
-              <p className="font-semibold text-slate-900 dark:text-slate-100 tabular-nums">{order.amount} MAD</p>
+              <p className="font-semibold text-gray-900 dark:text-slate-100 tabular-nums">{order.amount} MAD</p>
               <p
                 className={`text-sm font-medium tabular-nums ${
                   isProfitable ? 'text-emerald-600 dark:text-emerald-400' : 'text-red-600 dark:text-red-400'
@@ -84,11 +84,11 @@ function OrderCard({ order }) {
         </div>
 
         {/* Actions — below on mobile, inline right on desktop */}
-        <div className="mt-4 pt-3 border-t border-slate-100 dark:border-slate-600 flex gap-2 md:mt-0 md:pt-0 md:border-t-0 md:flex-shrink-0">
+        <div className="mt-4 pt-3 border-t border-gray-100 dark:border-slate-600 flex gap-2 md:mt-0 md:pt-0 md:border-t-0 md:flex-shrink-0">
           {order.status === 'Nouvelle' && (
             <button
               type="button"
-              className="flex-1 md:flex-initial py-3 px-4 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-medium rounded-xl text-sm active:bg-slate-800 dark:active:bg-slate-200 touch-manipulation transition-colors"
+              className="flex-1 md:flex-initial py-3 px-4 bg-blueGreeny dark:bg-slate-100 text-white dark:text-gray-900 font-medium rounded-xl text-sm active:bg-[#4aabaf] dark:active:bg-gray-200 touch-manipulation transition-colors"
             >
               Confirmer
             </button>
@@ -96,7 +96,7 @@ function OrderCard({ order }) {
           {(order.status === 'Nouvelle' || order.status === 'Confirmée') && (
             <button
               type="button"
-              className="flex-1 md:flex-initial py-3 px-4 bg-white dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 text-slate-800 dark:text-slate-200 font-medium rounded-xl text-sm active:bg-slate-50 dark:active:bg-slate-600 touch-manipulation transition-colors"
+              className="flex-1 md:flex-initial py-3 px-4 bg-pinky dark:bg-gray-700 border-2 border-gray-200 dark:border-slate-600 text-gray-800 dark:text-slate-200 font-medium rounded-xl text-sm active:bg-pinky dark:active:bg-slate-600 touch-manipulation transition-colors"
             >
               Marquer livrée
             </button>

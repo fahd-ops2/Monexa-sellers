@@ -6,6 +6,9 @@ import Cash from './pages/Cash'
 import Insights from './pages/Insights'
 import Products from './pages/Products'
 import Settings from './pages/Settings'
+import OrdersHistory from './pages/OrdersHistory'
+import ReportsExport from './pages/ReportsExport'
+import Clients from './pages/Clients'
 
 const STORAGE_KEY = 'seller-theme'
 
@@ -25,6 +28,9 @@ const PAGE_TITLES = {
   insights: 'Insights',
   products: 'Produits',
   settings: 'Réglages',
+  ordersHistory: 'Historique',
+  reportsExport: 'Rapports',
+  clients: 'Clients',
 }
 
 function App() {
@@ -56,6 +62,9 @@ function App() {
     insights: <Insights />,
     products: <Products />,
     settings: <Settings />,
+    ordersHistory: <OrdersHistory />,
+    reportsExport: <ReportsExport />,
+    clients: <Clients />,
   }
 
   return (

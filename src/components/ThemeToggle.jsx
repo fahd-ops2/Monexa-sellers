@@ -11,7 +11,7 @@ function ThemeToggle({ theme, onToggle, className = '' }) {
     <button
       type="button"
       onClick={onToggle}
-      className={`p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 active:bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-600 dark:active:bg-slate-500 touch-manipulation transition-colors ${className}`}
+      className={`p-2.5 rounded-xl bg-teenyGreeny hover:bg-pinky active:bg-blueGreeny dark:bg-slate-700 dark:hover:bg-slate-600 dark:active:bg-slate-500 touch-manipulation transition-colors ${className}`}
       aria-label={isDark ? 'Passer en mode clair' : 'Passer en mode sombre'}
       title={isDark ? 'Mode clair' : 'Mode sombre'}
     >
